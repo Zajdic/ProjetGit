@@ -1,38 +1,54 @@
-# ProjetGit
+# Project Overview
 
-## Overview
-The ProjetGit is a comprehensive weather application integrated with a WiFi manager module. The goal of this project is to provide users with an intuitive interface to check weather conditions seamlessly while managing their WiFi settings.
+## Project Architecture
+This project follows a modular architecture that separates concerns into distinct components. The primary modules are:
+- `weather_app.py`: Responsible for fetching and processing weather data.
+- `wifi_manager.py`: Manages Wi-Fi connections for the application.
 
-## Modules
+## Features
+- Fetch current weather information based on user location.
+- Provide advanced weather forecasts and alerts.
+- Seamless Wi-Fi management and connection handling.
 
-### Weather App
-- **Features:**
-  - Current weather updates 
-  - 7-day weather forecast 
-  - Location-based services using geolocation APIs
+## Prerequisites
+Before running the project, ensure you have the following installed:
+- Python 3.8 or higher
+- Required Python packages (install via `pip install -r requirements.txt`)
 
-### WiFi Manager
-- **Features:**
-  - Scan available WiFi networks
-  - Connect and disconnect from WiFi
-  - Manage saved networks 
+## Advanced Usage Examples
+### Fetching Weather Data
+To fetch weather data for a specific location:
+```python
+from weather_app import WeatherFetcher
 
-## Installation
-Clone the repository and install the required dependencies:
-```bash
-git clone https://github.com/Zajdic/ProjetGit.git
-cd ProjetGit
-npm install
+fetcher = WeatherFetcher(location='London')
+data = fetcher.get_weather()
+print(data)
 ```
 
-## Usage
-Run the application using:
-```bash
-npm start
+### Managing Wi-Fi Connections
+To manage Wi-Fi connections using `wifi_manager.py`:
+```python
+from wifi_manager import WifiManager
+
+manager = WifiManager()
+manager.connect_to_wifi(ssid='YourSSID', password='YourPassword')
 ```
 
-## Contributing
-Contributions are welcome! Please open an issue or a pull request if you have suggestions or improvements.
+## Troubleshooting
+- If you encounter issues with Wi-Fi connections, ensure the credentials are correct.
+- For weather data fetching errors, check your internet connection and API key validity.
 
-## License
-This project is licensed under the MIT License.
+## API Documentation
+### WeatherFetcher
+- **Methods:**
+  - `get_weather(location:str) -> dict` : Fetches weather data for the given location.
+
+### WifiManager
+- **Methods:**
+  - `connect_to_wifi(ssid:str, password:str)` : Connects to the specified Wi-Fi network.
+
+## Additional Sections
+Include any additional information that may be helpful to users, including known issues, future enhancements, and how to contribute to this project.  
+
+Feel free to customize these sections to best fit your project needs.
